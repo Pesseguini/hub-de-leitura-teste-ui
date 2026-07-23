@@ -34,7 +34,7 @@ describe('Funcionalidade: Contato', () => {
     cy.get('#btn-submit').click()
     cy.get('#alert-container').should('contain', 'Por favor, preencha o campo E-mail')
     //Resultado esperado
-  });
+  })
 
   it('Deve validar mensagem de erro ao enviar sem selecionar o assunto', () => {
     
@@ -45,7 +45,7 @@ describe('Funcionalidade: Contato', () => {
     cy.get('#alert-container').should('contain', 'Por favor, selecione o Assunto')
     //Resultado esperado
 
-  });
+  })
 
   it('Deve validar a mensagem de erro ao enviar sem preencher a mensagem', () => {
     
