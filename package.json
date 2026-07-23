@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Pesseguini/hub-de-leitura-teste-ui#readme",
   "dependencies": {
+    "@faker-js/faker": "^10.5.0",
     "cypress": "^15.19.0"
-  },
-  "devDependencies": {}
+  }
 }
