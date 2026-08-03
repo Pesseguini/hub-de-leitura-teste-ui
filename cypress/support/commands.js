@@ -26,7 +26,7 @@
 Cypress.Commands.add('login', (email, password) => {
 
     cy.get('#email').type(email, { log: false })
-    cy.get('#password').type(password, { log: false })
+    ///cy.get('#password').type(password, { log: false }) - oculta a senha no log do cypress
     cy.get('#login-btn').click()
     cy.url().should('include', 'dashboard')
 
