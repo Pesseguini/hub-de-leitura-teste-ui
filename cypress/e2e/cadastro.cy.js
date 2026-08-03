@@ -75,6 +75,7 @@ it('Deve Deve permitir cadastrar com um telefone inválido', () => {
     let nome = faker.person.fullName()
     let email = faker.internet.email()
     cadastroPage.preencherCadastro(nome,email,'11983959204', 'Teste@123', 'Teste@123')
+    ///Comportamento esperado: O sistema deve permitir cadastrar com um telefone inválido, pois o campo não é obrigatório
    
 });
 it('Deve validar mensagem de erro ao tentar cadastrar com uma senha diferente da confirmação de senha', () => {
