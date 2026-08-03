@@ -9,9 +9,10 @@ describe('Funcionalidade: Cadastro no Hub de Leiura', () => {
     it('Deve realizar o cadastro com sucesso, usando função JS', () => {
         let email = `teste${Date.now()}@teste.com`
         let name = `Joãozinho${Date.now()}`
+        let telefone = faker.string.numeric(11)
         cy.get('#name').type(name)
         cy.get('#email').type(email)
-        cy.get('#phone').type('(11) 99999-9999')
+        cy.get('#phone').type(telefone)
         cy.get('#password').type('Teste2345')
         cy.get('#confirm-password').type('Teste2345')
         cy.get('#terms-agreement').check()
@@ -36,7 +37,17 @@ describe('Funcionalidade: Cadastro no Hub de Leiura', () => {
         cy.get('#user-name').should('contain', name)
     });
 
-
+    it('Deve preencher cadastro com sucesso- usando custom command', () => {
+        let email = `teste${Date.now()}@teste.com`
+        let telefone = faker.string.numeric(11)
+        cy.preencherCadastro(
+            'Lucas Silva',
+            email,
+            telefone,
+            'Teste@123',
+            'Teste@123')
+        cy.url().should('include', 'dashboard')
+    });
 
 });
 
