@@ -23,7 +23,7 @@ describe('Funcionalidade: Busca no Catálogo de Livros', () => {
 
         })
     });
-    it.only('Deve validar todos os itens da Lista', () => {
+    it('Deve validar todos os itens da Lista', () => {
         cy.fixture('dados').then((cat) => {
             cat.forEach(item => {
                 cy.get('#search-input').clear().type(item.livro)

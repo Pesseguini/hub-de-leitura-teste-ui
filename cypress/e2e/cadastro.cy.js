@@ -7,8 +7,12 @@ describe('Funcionalidade: Cadastro no Hub de Leiura', () => {
     beforeEach(() => {
         cadastroPage.visitarPaginaCadastro() 
         ///<<Page Object>>  ///cy.visit('register.html'); está sendo substituido pelo page object
-    
     });
+    afterEach(() => {
+        cy.screenshot()
+
+    });
+    
     it('Deve realizar o cadastro com sucesso, usando função JS', () => {
         let email = `teste${Date.now()}@teste.com`
         let name = `Joãozinho${Date.now()}`
@@ -93,7 +97,7 @@ it('Deve validar mensagem de senha fraca, caso não cumpra os requesitos mínimo
     cy.get('#password-feedback').should('contain', 'Senha fraca')
     ///Comportamento esperado: O sistema deve exibir a mensagem de senha fraca, caso a senha não cumpra os requisitos mínimos de segurança
 });
-it.only('Deve validar mensagens de erro ao tentar cadastrar sem preencher nome e email', () => {
+it('Deve validar mensagens de erro ao tentar cadastrar sem preencher nome e email', () => {
     let nome = faker.person.fullName()
     let email = faker.internet.email()
     let telefone = faker.string.numeric(11)
